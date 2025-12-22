@@ -33,7 +33,7 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "https://pkgs.tailscale.com/stable/tailscale-setup-latest.exe" -OutFile "$env:TEMP\tailscale.exe"
           Start-Process "$env:TEMP\tailscale.exe" -ArgumentList "/S" -Wait
-          & "$env:ProgramFiles\Tailscale\tailscale.exe" up --authkey=tskey-auth-k9xFAv4sWz11CNTRL-sykpPDFGKJjZBFZSUsFhJjLw6stoui1w --hostname=gh-runner-$env:GITHUB_RUN_ID
+          & "$env:ProgramFiles\Tailscale\tailscale.exe" login
           $tsIP = & "$env:ProgramFiles\Tailscale\tailscale.exe" ip -4
           echo "TAILSCALE_IP=$tsIP" >> $env:GITHUB_ENV
 
@@ -50,4 +50,3 @@ jobs:
           Write-Host "Session is now active. It will remain open for approximately 6 hours."
           Write-Host "Press Ctrl+C in the log window to cancel the workflow earlier if needed."
           Start-Sleep -Seconds 21300 # نزیکەی 6 کاتژمێر
-
