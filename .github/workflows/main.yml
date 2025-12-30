@@ -1,11 +1,11 @@
-name: The Real Final RDP (v22 - No Software - 72 Hours - 64GB RAM)
+name: The Real Final RDP (v22 - No Software - 72 Hours - 16GB RAM)
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    # گۆڕینی ڕەنەر بۆ جۆرێکی بەهێزتر کە 64 گێگابایت ڕامی هەیە
-    runs-on: windows-latest-16-cores
+    # گۆڕینی ڕەنەر بۆ جۆرێک کە 16 گێگابایت ڕامی هەیە
+    runs-on: windows-latest-4-cores
     # هێشتنەوەی ماوەی کارکردن بۆ 72 کاتژمێر
     timeout-minutes: 4320 
     steps:
