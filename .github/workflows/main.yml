@@ -1,12 +1,12 @@
-name: The Real Final RDP (v22 - No Software - 72 Hours)
+name: The Real Final RDP (v22 - No Software - 72 Hours - 64GB RAM)
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    # بەرزکردنەوەی مواسەفات بۆ ڕامی زیاتر (128GB)
-    runs-on: windows-latest-32-cores 
-    # گۆڕینی ماوەی کارکردن بۆ 72 کاتژمێر
+    # گۆڕینی ڕەنەر بۆ جۆرێکی بەهێزتر کە 64 گێگابایت ڕامی هەیە
+    runs-on: windows-latest-16-cores
+    # هێشتنەوەی ماوەی کارکردن بۆ 72 کاتژمێر
     timeout-minutes: 4320 
     steps:
       - name: Configure RDP
@@ -51,5 +51,5 @@ jobs:
         run: |
           Write-Host "Session is now active. It will remain open for approximately 72 hours."
           Write-Host "Press Ctrl+C in the log window to cancel the workflow earlier if needed."
-          # گۆڕینی ماوەی چاوەڕوانی بۆ نزیکەی 72 کاتژمێر
+          # هێشتنەوەی ماوەی چاوەڕوانی بۆ نزیکەی 72 کاتژمێر
           Start-Sleep -Seconds 258900 
